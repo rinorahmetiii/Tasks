@@ -11,7 +11,7 @@
     
 
     <!-- Button trigger modal -->
-    <button id="addtask" type="button" class="btn   btn-primary" style="margin: 20px 0 20px 0" data-toggle="modal" data-target="#exampleModal">ADD A TASK</button>
+    <button id="addtask" type="button" class="btn  btn-block btn-primary" style="margin: 20px 0 20px 0" data-toggle="modal" data-target="#exampleModal">ADD A TASK</button>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -23,7 +23,17 @@
               </button>
             </div>
             <div class="modal-body">
-                
+                <form>
+                    <div class="form-group">
+                        <label for="tasktitle">Task Title</label>
+                        <input class="form-control" id="tasktitle" placeholder="Type task title here">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskdesciption">Task Description</label>
+                        <textarea class="form-control" id="taskdesciption" rows="4" placeholder="Describe task here" style="resize: none"></textarea>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
               <button id="closeModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
