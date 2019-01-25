@@ -1,19 +1,12 @@
 
 $(document).ready(function() {
     loadTasksFromLS();
+    
 
-    
-    
     $("#addtask").click(function(e) {
         blurModalBcgr();
         e.preventDefault();
     });
-
-
-
-
-
-
 
 
     $("#savechanges").click(function() {
@@ -47,21 +40,21 @@ $(document).ready(function() {
     });
 
     //Load Tasks from LS(If there is any)
-    function loadTasksFromLS() {
+    function loadTasksFromLS() {    
         let tasks = JSON.parse(localStorage.getItem('tasks'));
         if(!tasks) {
             $("#notasks").append('<p class="text-center">There is no task to show !!</p>');
             return;
         }
-        for(let task of tasks) {
+        tasks.map(function(task, index) {
             $(".jumbotron").append(`<div style="padding-bottom:8px"><div class="card" style = "padding-bottom:5px;">
             <div class="card-body">
             <h5 class="card-title">${task.title}</h5>
             <p class="card-text">${task.description}</p>
-            <button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button id="${index}" type="button" class="btn btn-primary">Edit</button>
+            <button id="${index}" type="button" class="btn btn-danger">Delete</button>
             </div></div></div>`);
-        }
+        });
     }
 
     //The following code is only for styling modal background with blur effect
